@@ -115,7 +115,7 @@ for (var i in obj) { console.log(i); };
  // 输出：first, zoo, second
  for (var i in obj) { console.log(i); };
 ```
-5. for-in循环能够枚举继承的属性名，有的时候使用 for-in 遍历数组会发生诡异的现象。
+5. for-in循环能够遍历来自于继承的枚举，有的时候使用 for-in 遍历数组会发生诡异的现象。
 ``` javascript
 
 // List继承于 Array 对象以保证自己是一个数组
