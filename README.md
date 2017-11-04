@@ -116,7 +116,7 @@ for (var i in obj) { console.log(i); };
  // 输出：first, zoo, second
  for (var i in obj) { console.log(i); };
 ```
-5. for-in循环能够遍历来自于继承的枚举，有的时候使用 for-in 遍历数组会发生诡异的现象。
+5. for-in循环能够遍历来自于继承的枚举，但有的时候使用 for-in 遍历数组会发生诡异的现象。
 ``` javascript
 
 // List继承于 Array 对象以保证自己是一个数组
@@ -156,14 +156,29 @@ for(let value of myList){
 
 1. 数组 for-of 直接获取数组的值:
 ``` javascript
-var arr = ['a','b','c','d'];
-for(var val of arr) {
+let arr = ['a','b','c','d'];
+for(let val of arr) {
 	console.log("val的值为:",val); // 依次输出: a,b,c,d
+}
+```
+但尝试用 for-of 遍历普通对象(非数组对象)时会出现错误提示
+``` javascript
+let orc = {
+	name: 'Thrall',
+	age: 18
+};
+/**
+ * 当我们使用 for-of 遍历非数组对象时，
+ * 编译器会出现错误提示：
+ * orc[Symbol.iterator] is not a function
+ */
+for (let value of orc) {
+  console.log( value );
 }
 ```
 2. 当你想遍历一个对象的枚举时，可以通过 Object.keys() 获取对象的枚举部分的数组，并通过for-of进行遍历。
 ``` javascript
-var orc = {
+let orc = {
 	name: 'Thrall',
 	age: 18,
 	work: function(){
@@ -173,7 +188,7 @@ var orc = {
 // 如果你想用 for-of 遍历一个对象的枚举（属性和函数），
 // 你可以使用 Object.keys() 方法.
 // Object.keys() 可以将对象的枚举置入一个数组
-var keyList = Object.keys(orc); // 获取key集合
+let keyList = Object.keys(orc); // 获取key集合
 // 结果: name, age, work
 for(var key of keyList) {
 	console.log( key );
@@ -201,7 +216,7 @@ for (var n of uniqueName) {
 }
 
 ```
-5.Map对象(ES6)是一个键值对数组，键部分是一个Set以确保其键不重复。
+5.Map对象(ES6)是一个键值对数组，键部分以Set的方式以确保其键不重复。
 ``` javascript
 var m = new Map();
 m.set('兔子','1');
@@ -291,7 +306,7 @@ while( (el = iterator.next()) && !(isDone = el.done) ){
 // 该 iterator 实际上是一个函数，作用是返回一个迭代器对象
 let iterator = m[Symbol.iterator]();
 ```
-看完上一个例子，我们来试着使用 for-of 遍历一个普通对象（非数组对象）
+看完上一个例子，我们再来回顾一下用 for-of 遍历一个普通对象（非数组对象）
 ``` javascript
 var orc = {
 	name: 'Thrall',
