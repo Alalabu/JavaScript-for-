@@ -192,6 +192,8 @@ let keyList = Object.keys(orc); // 获取key集合
 // 结果: name, age, work
 for(var key of keyList) {
 	console.log( key );
+	// 循环中可以通过 key 获取该对象枚举部分的 value
+	// orc[ key ]
 }
 
 ```
