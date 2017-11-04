@@ -23,18 +23,18 @@ for(var index in arr) {
 }
       
 ```
+遍历对象时，将会获取该对象的枚举部分（包含属性和函数名）
 ``` javascript
 var orc = {
       name: '雷克萨',
       age: 18,
-      job: 'teacher'
+      work: function(){}
 };
-// 结果: "name","age","job"
+// 结果: "name","age","work"
 for(var field in orc) {
-      // 此时得到的value为orc中定义的属性,将value作为orc的
-      // 下标进行遍历则可以得到value所对应的属性值.
-      console.log(field);
-      console.log(field + "=>", orc[field]);
+      // 此时得到的field为orc中定义的枚举
+      // 可通过[]调用该orc对象的枚举值: orc[field]
+      console.log(field);
 }
 ```
 2.for-in 循环中的代码每执行一次，就会对数组的元素或者对象的属性进行一次操作。
