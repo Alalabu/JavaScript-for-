@@ -155,10 +155,10 @@ for(let value of myList){
 
 1. 数组 for-of 直接获取数组的值:
 ``` javascript
-    var arr1 = ['a','b','c','d','e','f'];
-    for(var val of arr1) {
-    	console.log("val的值为:",val); // 依次输出: a,b,c,d,e,f
-    }
+var arr1 = ['a','b','c','d','e','f'];
+for(var val of arr1) {
+	console.log("val的值为:",val); // 依次输出: a,b,c,d,e,f
+}
 ```
 2. 当你想遍历一个对象的枚举时，可以通过 Object.keys() 获取对象的枚举部分的数组，并通过for-of进行遍历。
 ``` javascript
