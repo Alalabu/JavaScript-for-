@@ -28,11 +28,12 @@ var orc = {
       age: 18,
       job: 'teacher'
 };
-for(var value in orc) {
+// 结果: "name","age","job"
+for(var field in orc) {
       // 此时得到的value为orc中定义的属性,将value作为orc的
       // 下标进行遍历则可以得到value所对应的属性值.
-      console.log(value);
-      console.log(value + "=>", orc[value]);
+      console.log(field);
+      console.log(field + "=>", orc[field]);
 }
 ```
 2.for-in 循环中的代码每执行一次，就会对数组的元素或者对象的属性进行一次操作。
