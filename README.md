@@ -327,6 +327,7 @@ Object.defineProperty(orc, Symbol.iterator, {
   }
 });
 // 借此我们实现了普通对象(非数组对象)的 for-of 遍历
+// 结果: Thrall, 18
 for (let value of orc) {
   console.log( value );
 }
