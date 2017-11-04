@@ -1,5 +1,8 @@
 # 《JavaScript中的for循环》
 
+> 作者：阿拉拉布
+> 参与编辑：火火同学
+
 > **目录**
 > - part 1: 关于for-in循环
 > - part 2: 关于for-of循环
@@ -11,10 +14,10 @@
 
 ``` javascript
 	// 遍历数组时,index获取数组的下标(实际上该下标属于该数组对象的属性)
-var arr1 = [1, 2, 3, 4, 5, 6];
-for(var index in arr1) {
-      // 得到的index是arr1数组中各个值的下标,
-      // arr1[index]则是对应的值.
+var arr = [1, 2, 3, 4, 5, 6];
+for(var index in arr) {
+      // 得到的index是arr数组中各个值的下标,
+      // arr[index]则是对应的值.
       console.log(index);
 }
       
@@ -25,11 +28,11 @@ var orc = {
       age: 18,
       job: 'teacher'
 };
-for(var value in arr2) {
+for(var value in orc) {
       // 此时得到的value为arr2中定义的属性,将value作为arr2的
       // 下标进行遍历则可以得到value所对应的属性值.
       console.log(value);
-      console.log(value + "=>", arr2[value]);
+      console.log(value + "=>", orc[value]);
 }
 ```
 
