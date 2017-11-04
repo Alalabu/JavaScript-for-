@@ -29,7 +29,7 @@ var orc = {
       job: 'teacher'
 };
 for(var value in orc) {
-      // 此时得到的value为arr2中定义的属性,将value作为arr2的
+      // 此时得到的value为orc中定义的属性,将value作为orc的
       // 下标进行遍历则可以得到value所对应的属性值.
       console.log(value);
       console.log(value + "=>", orc[value]);
@@ -56,14 +56,14 @@ for(let index in str) {
 
 > **II for-in循环的弊端**
 
-1. for...in 循环只遍历可枚举属性。像 Array 和 Object ， Number等 js中基本包装类型的原型属性是不可枚举的。
+1. for-in 循环只遍历可枚举属性。像 Array 和 Object ， Number等 js中基本包装类型的原型属性是不可枚举的。
 
 ``` javascript
 var arr = new Array();
 for（var i in arr）{
 	// 对象.hasOwnProperty(属性)
 	// 可判断该属性是否属于该对象自身,而非其原型链中继承的属性
-	if(!a.hasOwnProperty(i)) continue;//跳过继承的属性
+	if(!arr.hasOwnProperty(i)) continue;//跳过继承的属性
 	// do something...
 }
 ```
@@ -71,8 +71,8 @@ for（var i in arr）{
 
 2. 代码中的index不是数字，是字符串“0”、“1”、“2”，可能无意间进行字符串的计算“2”+1=“21”等。
 ``` javascript
-var a = ['a','b','c'];
-for(var i in a){
+var arr = ['a','b','c'];
+for(var i in arr){
 	// i 是字符串类型的值
 	console.log(i);		// 0,1,2依次输出
 	console.log(typeof i);	// string
@@ -80,7 +80,7 @@ for(var i in a){
 	console.log(i - 10);	// -10,-9,-8依次输出
 }
 ```
-3. 代码可能按照随机顺序遍历对象枚举（在该对象仿佛是一个数组对象时，优先遍历数组下标，再遍历其他对象属性）。
+3. for-in可能按照仿佛是随机的顺序遍历对象枚举（在该对象仿佛是一个数组对象时，优先遍历数组下标，再遍历其他对象属性）。
 ``` javascript
 var obj = {
 	'first':'first',
