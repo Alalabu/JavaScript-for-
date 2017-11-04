@@ -273,8 +273,8 @@ for (var [key, value] of m ){
 ``` javascript
 /**
  * 通过 entries 可获取Map的迭代器对象
- * 每次调用 next() 方法将获取该迭代器中的第一个元素的封装对象
- * 并且将该元素移出迭代器
+ * 每次调用 next() 方法将获取该迭代器中的一个元素的封装对象
+ * 并在下一次调用 next() 方法时将迭代器指向下一个对象
  * 其中还包含一个 done 属性, 表示是否迭代完毕
  */
 let iterator = m.entries();
