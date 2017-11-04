@@ -14,7 +14,8 @@
 
 ``` javascript
 // 遍历数组时,index获取数组的下标(实际上该下标属于该数组对象的属性)
-var arr = [1, 2, 3, 4, 5, 6];
+var arr = ['a', 'b', 'c'];
+// 结果: 0, 1, 2
 for(var index in arr) {
       // 得到的index是arr数组中各个值的下标,
       // arr[index]则是对应的值.
